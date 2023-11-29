@@ -14,3 +14,4 @@ class NewsSpiderItem(scrapy.Item):
     comment = scrapy.Field()
     view = scrapy.Field()
     tag = scrapy.Field()
+    origin = scrapy.Field() # 来源网站

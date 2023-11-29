@@ -3,6 +3,7 @@ import datetime
 from datetime import datetime
 import scrapy
 from news_spider.items import NewsSpiderItem
+import mysql.connector
 
 
 class IthomeSpiderSpider(scrapy.Spider):
@@ -10,7 +11,24 @@ class IthomeSpiderSpider(scrapy.Spider):
     allowed_domains = ["auto.ithome.com"]
     start_urls = ["https://auto.ithome.com"]
 
+    def get_last_news_time_from_db(self):
+        conn = mysql.connector.connect(
+            host=self.settings.get('MYSQL_HOST'),
+            database=self.settings.get('MYSQL_DATABASE'),
+            user=self.settings.get('MYSQL_USER'),
+            passwd=self.settings.get('MYSQL_PASSWORD')
+        )
+        cursor = conn.cursor()
+        cursor.execute("SELECT MAX(time) FROM news")
+        result = cursor.fetchone()
+        last_time = result[0] if result[0] else '1970/01/01 00:00:00'
+        cursor.close()
+        conn.close()
+        return last_time
+
+
     def parse(self, response):
+        last_db_time = self.get_last_news_time_from_db()
         # 实例化一个item对象
         item = NewsSpiderItem()
         count = 0
@@ -24,7 +42,15 @@ class IthomeSpiderSpider(scrapy.Spider):
                 item['url'] = news.xpath('.//div/h2/a/@href').extract()[0]
                 item['time'] = news.xpath('.//div/@data-ot').extract()[0]
                 item['tag'] = news.xpath('.//div/a/text()').extract()
-                yield item
+                item['origin'] = 'IT之家'
+
+                item_time = datetime.strptime(item['time'], '%Y/%m/%d %H:%M:%S')
+                if item_time > last_db_time:
+                    yield item
+                else:
+                    # 如果数据库中已经存在该新闻，则停止爬取
+                    return item
+
 
             last_news_time_xpath = f'//*[@id="list"]/div[1]/ul/li[30]/div/@data-ot'
             last_news_time = response.xpath(last_news_time_xpath).get()
@@ -50,8 +76,9 @@ class IthomeSpiderSpider(scrapy.Spider):
                     item['tag'] = news.xpath('.//div/a/text()').extract()
                     yield item
                     count += 1
-                if count % 30 == 0 and item[
-                    'title'] != '车评人韩路爆料小米汽车信息：定位 C 级豪华，售价超 30 万 / 高配近 40 万':
+                    if item['title'] == '车评人韩路爆料小米汽车信息：定位 C 级豪华，售价超 30 万 / 高配近 40 万':
+                        return item
+                if count % 30 == 0 :
                     last_news_time = item['time']
                     print(item['time'])
                     print(item['title'])
@@ -60,3 +87,4 @@ class IthomeSpiderSpider(scrapy.Spider):
                         int(last_news_timestamp)) + '000'
                     yield scrapy.Request(next_url, meta={'item': item}, method='POST',
                                          callback=self.parse)
+
