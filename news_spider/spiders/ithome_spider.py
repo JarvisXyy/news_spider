@@ -74,6 +74,7 @@ class IthomeSpiderSpider(scrapy.Spider):
                     item['url'] = news.xpath('.//div/h2/a/@href').extract()[0]
                     item['time'] = news.xpath('.//div/@data-ot').extract()[0]
                     item['tag'] = news.xpath('.//div/a/text()').extract()
+                    item['origin'] = 'IT之家'
                     yield item
                     count += 1
                     if item['title'] == '车评人韩路爆料小米汽车信息：定位 C 级豪华，售价超 30 万 / 高配近 40 万':
