@@ -16,7 +16,8 @@ class IthomeSpiderSpider(scrapy.Spider):
             host=self.settings.get('MYSQL_HOST'),
             database=self.settings.get('MYSQL_DATABASE'),
             user=self.settings.get('MYSQL_USER'),
-            passwd=self.settings.get('MYSQL_PASSWORD')
+            passwd=self.settings.get('MYSQL_PASSWORD'),
+            port=self.settings.get('MYSQL_PORT'),
         )
         cursor = conn.cursor()
         cursor.execute("SELECT MAX(time) FROM news")
@@ -88,4 +89,3 @@ class IthomeSpiderSpider(scrapy.Spider):
                         int(last_news_timestamp)) + '000'
                     yield scrapy.Request(next_url, meta={'item': item}, method='POST',
                                          callback=self.parse)
-

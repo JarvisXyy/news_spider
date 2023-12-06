@@ -96,7 +96,8 @@ FEED_EXPORT_ENCODING = "utf-8"
 LOG_FILE = 'scrapy_log.txt'
 
 
-MYSQL_HOST = '150.158.168.168'
+MYSQL_HOST = 'sh-cynosdbmysql-grp-ijgx66m6.sql.tencentcdb.com'
 MYSQL_DATABASE = 'wenxuanev'
 MYSQL_USER = 'wenxuanev'
-MYSQL_PASSWORD = 'dtnZESM6LZjHcSzz'
+MYSQL_PASSWORD = 'xiaoyuyang11@'
+MYSQL_PORT = 27258

@@ -21,7 +21,8 @@ class MysqlPipeline(object):
             host=spider.settings.get('MYSQL_HOST'),
             database=spider.settings.get('MYSQL_DATABASE'),
             user=spider.settings.get('MYSQL_USER'),
-            passwd=spider.settings.get('MYSQL_PASSWORD')
+            passwd=spider.settings.get('MYSQL_PASSWORD'),
+            port=spider.settings.get('MYSQL_PORT'),
         )
         self.cursor = self.conn.cursor()
 
@@ -43,5 +44,4 @@ class MysqlPipeline(object):
         self.cursor.execute(sql, values)
         self.conn.commit()
         return item
-
 
