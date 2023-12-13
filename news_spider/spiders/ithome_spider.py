@@ -46,8 +46,6 @@ class IthomeSpiderSpider(scrapy.Spider):
                 item['picture'] = news.xpath('.//a/img/@data-original').extract()[0]
                 item['brief'] = news.xpath('.//div/div/text()').extract()[0]
                 item['origin'] = 'IT之家'
-                print(item['picture'])
-                print(item['brief'])
                 item_time = datetime.strptime(item['time'], '%Y/%m/%d %H:%M:%S')
                 if item_time > last_db_time:
                     yield item
