@@ -33,12 +33,14 @@ class MysqlPipeline(object):
 
     def process_item(self, item, spider):
         # 将每个item存入数据库
-        sql = "INSERT INTO news (title, url, time, tag,origin) VALUES (%s, %s, %s, %s, %s)"
+        sql = "INSERT INTO news (title,url,time,tag,picture,brief,origin) VALUES (%s,%s,%s,%s,%s,%s,%s)"
         values = (
             item.get('title'),
             item.get('url'),
             item.get('time'),
             ', '.join(item.get('tag', [])),
+            item.get('picture'),
+            item.get('brief'),
             item.get('origin')
         )
         self.cursor.execute(sql, values)

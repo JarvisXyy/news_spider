@@ -6060,3 +6060,702 @@ mysql.connector.errors.ProgrammingError: 1046 (3D000): No database selected
  'scheduler/enqueued/memory': 1,
  'start_time': datetime.datetime(2023, 12, 5, 12, 19, 57, 715363, tzinfo=datetime.timezone.utc)}
 2023-12-05 20:19:58 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 14:51:51 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 14:51:51 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 14:51:51 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 14:51:51 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 14:51:51 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 14:51:51 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 14:51:51 [scrapy.extensions.telnet] INFO: Telnet Password: 898b665c305a1994
+2023-12-13 14:51:51 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 14:51:51 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 14:51:51 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 14:51:51 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 14:51:51 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 14:51:51 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 14:51:53 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 14:51:53 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 14:51:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 14:51:53 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 14:51:53 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 16494,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.475506,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 6, 51, 53, 469435, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60956,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 72089600,
+ 'memusage/startup': 72089600,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 6, 51, 52, 993929, tzinfo=datetime.timezone.utc)}
+2023-12-13 14:51:53 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 14:52:40 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 14:52:40 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 14:52:40 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 14:52:40 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 14:52:40 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 14:52:40 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 14:52:40 [scrapy.extensions.telnet] INFO: Telnet Password: 3f30a137c2528575
+2023-12-13 14:52:40 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 14:52:40 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 14:52:40 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 14:52:40 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 14:52:40 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 14:52:40 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 14:52:40 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 14:52:40 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 14:52:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 14:52:42 [scrapy.core.scraper] ERROR: Spider error processing <GET https://auto.ithome.com> (referer: None)
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/utils/defer.py", line 279, in iter_errback
+    yield next(it)
+          ^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/utils/python.py", line 350, in __next__
+    return next(self.data)
+           ^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/spidermiddlewares/offsite.py", line 28, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/spidermiddlewares/referer.py", line 352, in <genexpr>
+    return (self._set_referer(r, response) for r in result or ())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/spidermiddlewares/urllength.py", line 27, in <genexpr>
+    return (r for r in result or () if self._filter(r, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/spidermiddlewares/depth.py", line 31, in <genexpr>
+    return (r for r in result or () if self._filter(r, response, spider))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/scrapy/core/spidermw.py", line 106, in process_sync
+    for r in iterable:
+  File "/Users/jarvis_xyy/PycharmProjects/news_spider/news_spider/spiders/ithome_spider.py", line 46, in parse
+    item['picture'] = news.xpath('.//div/a/img/@src').extract()[0]
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+2023-12-13 14:52:42 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 14:52:42 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 16494,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 1.496888,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 6, 52, 42, 164853, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60956,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 10,
+ 'memusage/max': 70238208,
+ 'memusage/startup': 70238208,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/IndexError': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 6, 52, 40, 667965, tzinfo=datetime.timezone.utc)}
+2023-12-13 14:52:42 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 14:56:46 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 14:56:46 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 14:56:46 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 14:56:46 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 14:56:46 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 14:56:46 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 14:56:46 [scrapy.extensions.telnet] INFO: Telnet Password: 0cfea86b538dfa64
+2023-12-13 14:56:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 14:56:47 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 14:56:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 14:56:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 14:56:47 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 14:56:47 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 14:56:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 14:56:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 14:56:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 14:56:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://auto.ithome.com>
+{'brief': '<div '
+          'class="m">日前，克莱斯勒（中国）汽车销售有限公司根据《缺陷汽车产品召回管理条例》和《缺陷汽车产品召回管理条例实施办法》的要求，向国家市场监督管理总局备案了召回计划。决定自 '
+          '2024 年 4 月 15 日起，召回 2017 年 8 月 21 日至 2020 年 7 月 9 日期间生产的部分进口大捷龙 '
+          '3.6L 插电混动版汽车，共计 1971 辆。</div>',
+ 'origin': 'IT之家',
+ 'picture': [],
+ 'tag': ['汽车'],
+ 'time': '2023/12/13 14:40:16',
+ 'title': '克莱斯勒在国内召回 1971 辆进口大捷龙 3.6L 插电混动版汽车，存在电机故障风险',
+ 'url': 'https://www.ithome.com/0/738/957.htm'}
+2023-12-13 14:56:50 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 14:56:50 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13484,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 1.546722,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 6, 56, 50, 55847, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60412,
+ 'httpcompression/response_count': 1,
+ 'item_scraped_count': 1,
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 10,
+ 'memusage/max': 71434240,
+ 'memusage/startup': 71434240,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 6, 56, 48, 509125, tzinfo=datetime.timezone.utc)}
+2023-12-13 14:56:50 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 14:57:53 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 14:57:53 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 14:57:53 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 14:57:53 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 14:57:53 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 14:57:53 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 14:57:53 [scrapy.extensions.telnet] INFO: Telnet Password: 635422950b4ca90d
+2023-12-13 14:57:53 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 14:57:53 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 14:57:53 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 14:57:53 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 14:57:53 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 14:57:53 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 14:57:53 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 14:57:53 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 14:57:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 14:57:54 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 14:57:54 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13484,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.364216,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 6, 57, 54, 257823, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60412,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 75710464,
+ 'memusage/startup': 75710464,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 6, 57, 53, 893607, tzinfo=datetime.timezone.utc)}
+2023-12-13 14:57:54 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 14:58:05 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 14:58:05 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 14:58:05 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 14:58:05 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 14:58:05 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 14:58:05 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 14:58:05 [scrapy.extensions.telnet] INFO: Telnet Password: 9ba5fc75474711bd
+2023-12-13 14:58:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 14:58:05 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 14:58:05 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 14:58:05 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 14:58:05 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 14:58:05 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 14:58:06 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 14:58:06 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 14:58:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 14:58:08 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 14:58:08 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13484,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 1.391772,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 6, 58, 8, 146477, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60412,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 69812224,
+ 'memusage/startup': 69812224,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 6, 58, 6, 754705, tzinfo=datetime.timezone.utc)}
+2023-12-13 14:58:08 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 14:59:12 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 14:59:12 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 14:59:12 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 14:59:12 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 14:59:12 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 14:59:12 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 14:59:12 [scrapy.extensions.telnet] INFO: Telnet Password: 8db7ea9c5e77062a
+2023-12-13 14:59:12 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 14:59:12 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 14:59:12 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 14:59:12 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 14:59:12 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 14:59:12 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 14:59:12 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 14:59:12 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 14:59:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 14:59:13 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 14:59:13 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13484,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.343865,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 6, 59, 13, 47069, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60412,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 75644928,
+ 'memusage/startup': 75644928,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 6, 59, 12, 703204, tzinfo=datetime.timezone.utc)}
+2023-12-13 14:59:13 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 15:01:26 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 15:01:26 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 15:01:26 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 15:01:26 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 15:01:26 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 15:01:26 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 15:01:26 [scrapy.extensions.telnet] INFO: Telnet Password: 81f3bccc7ea11935
+2023-12-13 15:01:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 15:01:26 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 15:01:26 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 15:01:26 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 15:01:26 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 15:01:26 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 15:01:27 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 15:01:27 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 15:01:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 15:01:29 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 15:01:29 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13474,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 1.459904,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 7, 1, 29, 302595, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60412,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 65994752,
+ 'memusage/startup': 65994752,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 7, 1, 27, 842691, tzinfo=datetime.timezone.utc)}
+2023-12-13 15:01:29 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 15:01:43 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 15:01:43 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 15:01:43 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 15:01:43 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 15:01:43 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 15:01:43 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 15:01:43 [scrapy.extensions.telnet] INFO: Telnet Password: 322525e675ed9d00
+2023-12-13 15:01:43 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 15:01:43 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 15:01:43 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 15:01:43 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 15:01:43 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 15:01:43 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 15:01:43 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 15:01:43 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 15:01:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 15:01:44 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 15:01:44 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13482,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 0.350692,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 7, 1, 44, 259776, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 60412,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 65568768,
+ 'memusage/startup': 65568768,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 7, 1, 43, 909084, tzinfo=datetime.timezone.utc)}
+2023-12-13 15:01:44 [scrapy.core.engine] INFO: Spider closed (finished)
+2023-12-13 15:14:25 [scrapy.utils.log] INFO: Scrapy 2.11.0 started (bot: news_spider)
+2023-12-13 15:14:25 [scrapy.utils.log] INFO: Versions: lxml 4.9.3.0, libxml2 2.10.3, cssselect 1.2.0, parsel 1.8.1, w3lib 2.1.2, Twisted 22.10.0, Python 3.11.5 (v3.11.5:cce6ba91b3, Aug 24 2023, 10:50:31) [Clang 13.0.0 (clang-1300.0.29.30)], pyOpenSSL 23.2.0 (OpenSSL 3.1.2 1 Aug 2023), cryptography 41.0.3, Platform macOS-13.5-arm64-arm-64bit
+2023-12-13 15:14:25 [scrapy.addons] INFO: Enabled addons:
+[]
+2023-12-13 15:14:25 [asyncio] DEBUG: Using selector: KqueueSelector
+2023-12-13 15:14:25 [scrapy.utils.log] DEBUG: Using reactor: twisted.internet.asyncioreactor.AsyncioSelectorReactor
+2023-12-13 15:14:25 [scrapy.utils.log] DEBUG: Using asyncio event loop: asyncio.unix_events._UnixSelectorEventLoop
+2023-12-13 15:14:25 [scrapy.extensions.telnet] INFO: Telnet Password: a25d9e025a9db8a1
+2023-12-13 15:14:25 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2023-12-13 15:14:25 [scrapy.crawler] INFO: Overridden settings:
+{'BOT_NAME': 'news_spider',
+ 'FEED_EXPORT_ENCODING': 'utf-8',
+ 'LOG_FILE': 'scrapy_log.txt',
+ 'NEWSPIDER_MODULE': 'news_spider.spiders',
+ 'REQUEST_FINGERPRINTER_IMPLEMENTATION': '2.7',
+ 'SPIDER_MODULES': ['news_spider.spiders'],
+ 'TWISTED_REACTOR': 'twisted.internet.asyncioreactor.AsyncioSelectorReactor',
+ 'USER_AGENT': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+               '(KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36'}
+2023-12-13 15:14:25 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2023-12-13 15:14:25 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2023-12-13 15:14:25 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_spider.pipelines.NewsSpiderPipeline',
+ 'news_spider.pipelines.MysqlPipeline']
+2023-12-13 15:14:25 [scrapy.core.engine] INFO: Spider opened
+2023-12-13 15:14:26 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2023-12-13 15:14:26 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2023-12-13 15:14:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://auto.ithome.com> (referer: None)
+2023-12-13 15:14:28 [scrapy.core.engine] INFO: Closing spider (finished)
+2023-12-13 15:14:28 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 296,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 13047,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 1.633784,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2023, 12, 13, 7, 14, 28, 215360, tzinfo=datetime.timezone.utc),
+ 'httpcompression/response_bytes': 59942,
+ 'httpcompression/response_count': 1,
+ 'log_count/DEBUG': 4,
+ 'log_count/INFO': 10,
+ 'memusage/max': 74350592,
+ 'memusage/startup': 74350592,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2023, 12, 13, 7, 14, 26, 581576, tzinfo=datetime.timezone.utc)}
+2023-12-13 15:14:28 [scrapy.core.engine] INFO: Spider closed (finished)

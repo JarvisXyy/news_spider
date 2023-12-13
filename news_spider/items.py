@@ -12,6 +12,7 @@ class NewsSpiderItem(scrapy.Item):
     title = scrapy.Field()
     url = scrapy.Field()
     comment = scrapy.Field()
-    view = scrapy.Field()
+    picture = scrapy.Field()
     tag = scrapy.Field()
     origin = scrapy.Field() # 来源网站
+    brief = scrapy.Field() # 简介
